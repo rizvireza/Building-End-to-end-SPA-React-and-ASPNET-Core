@@ -8,5 +8,7 @@ npm run dev
 npm install bootstrap
 add import "bootstrap/dist/css/bootstrap.min.css" to main.tsx
 
+npm install axios@1 @tanstack/react-query@5
+
 # Web API
 dotnet new webapi -minimal
