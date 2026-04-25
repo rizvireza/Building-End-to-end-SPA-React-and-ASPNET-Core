@@ -14,3 +14,6 @@ dotnet add package Microsoft.EntityFrameworkCore.Design --version 8.0.0
 dotnet ef migrations add initial
 dotnet ef database update
 
+## minivalidation (Needed since mini api does not have validation)
+dotnet add package minivalidation
+
