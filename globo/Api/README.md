@@ -17,3 +17,6 @@ dotnet ef database update
 ## minivalidation (Needed since mini api does not have validation)
 dotnet add package minivalidation
 
+## Entity Framework commands to add bids and seed data
+dotnet ef migrations add bids
+dotnet ef database update
