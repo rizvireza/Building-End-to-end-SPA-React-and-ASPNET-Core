@@ -1,11 +1,15 @@
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using MiniValidation;
+
 public static class WebApplicationHouseExtensions
 {
     public static void MapHouseEndpoints(this WebApplication app)
     {
         app.MapGet("/houses", (IHouseRepository houseRepository) =>
-{
-    return houseRepository.GetAll();
-}).Produces<IEnumerable<HouseDto>>(StatusCodes.Status200OK);
+    {
+        return houseRepository.GetAll();
+    }).Produces<IEnumerable<HouseDto>>(StatusCodes.Status200OK);
 
 app.MapGet("/house/{houseId:int}", async (int houseId, IHouseRepository houseRepository) =>
 {
@@ -55,4 +59,5 @@ app.MapDelete("/houses/{houseId:int}", async (int houseId, IHouseRepository hous
     await houseRepository.Delete(houseId);
     return Results.Ok();
 }).ProducesProblem(404).Produces<HouseDetailDto>(StatusCodes.Status200OK);
-}
+
+    }}
