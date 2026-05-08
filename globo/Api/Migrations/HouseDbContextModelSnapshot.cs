@@ -35,7 +35,7 @@ namespace Api.Migrations
 
                     b.HasIndex("HouseId");
 
-                    b.ToTable("BidEntity");
+                    b.ToTable("Bids");
 
                     b.HasData(
                         new

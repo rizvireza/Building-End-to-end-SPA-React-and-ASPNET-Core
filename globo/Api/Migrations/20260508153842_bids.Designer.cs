@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Api.Migrations
 {
     [DbContext(typeof(HouseDbContext))]
-    [Migration("20260425145049_bids")]
+    [Migration("20260508153842_bids")]
     partial class bids
     {
         /// <inheritdoc />
@@ -38,7 +38,7 @@ namespace Api.Migrations
 
                     b.HasIndex("HouseId");
 
-                    b.ToTable("BidEntity");
+                    b.ToTable("Bids");
 
                     b.HasData(
                         new
