@@ -19,8 +19,8 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwagger(); // Creates the Swagger JSON endpoint at /swagger/v1/swagger.json
+    app.UseSwaggerUI(); // Creates the Swagger UI at /swagger
 }
 
 app.UseCors(policy =>

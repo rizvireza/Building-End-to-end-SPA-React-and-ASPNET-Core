@@ -1,4 +1,4 @@
-import axios, { Axios, AxiosError } from "axios"
+import axios, { AxiosError } from "axios"
 import { Bid } from "../types/bid";
 import Problem from "../types/problem";
 import config from "../config";
@@ -20,6 +20,7 @@ const useAddBids = () => {
         mutationFn: (b) => axios.post(`${config.baseApiUrl}/houses/${b.houseId}/bids`, b),
         onSuccess: (resp, bid) => {
             queryClient.invalidateQueries({ queryKey: ["bids", bid.houseId] });
+            console.log("Bid added successfully", resp);
         }
     });
 }
